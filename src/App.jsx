@@ -1,16 +1,10 @@
 import { Container } from "@mui/material";
+import Navbar from "./components/navbar/NavListDrawer";
 
 export default function App() {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh", // Asegúrate de que el contenedor tenga una altura definida
-      }}
-    >
+    <Container>
+      <Navbar />
     </Container>
   );
 }
