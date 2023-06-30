@@ -3,9 +3,9 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from '@mui/icons-material/Drafts';
 import { Box } from "@mui/system";
 
-export default function Navbar() {
+export default function NavListDrawer() {
   return (
-    <Box sx={{ width: 250, bgcolor: "lightsalmon" }}>
+    <Box sx={{ width: 250, bgcolor: "lightsalmon", borderRadius: 2}}>
       <nav>
         <List>
           <ListItem>
