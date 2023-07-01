@@ -25,7 +25,7 @@ export default function NavListDrawer() {
         </nav>
         <Divider />
         <List>
-          <ListItem>
+          <ListItem disablePadding>
             <ListItemButton
             component="a"
             href="#trash"
@@ -35,9 +35,11 @@ export default function NavListDrawer() {
           </ListItem>
         </List>
         <List>
-          <ListItem>
-            <ListItemButton>
-              <ListItemText>Draw</ListItemText>
+          <ListItem disablePadding>
+            <ListItemButton
+            component="a"
+            href="#Spam">
+              <ListItemText>Spam</ListItemText>
             </ListItemButton>
           </ListItem>
         </List>
