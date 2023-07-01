@@ -1,15 +1,46 @@
+import { List, ListItem, ListItemIcon, ListItemText, Divider, ListItemButton } from "@mui/material";
 import { Box } from "@mui/system";
-import { List, ListItem, ListItemText } from "@mui/material";
+import InboxIcon from "@mui/icons-material/Inbox";
+import DraftsIcon from '@mui/icons-material/Drafts';
+
+
 export default function NavListDrawer() {
   return (
     <Box sx={{width: 200, bgcolor: "lightblue"}}>
-      <List>
-        <ListItem>
-          <ListItemText>
-        esto es el drawer
-          </ListItemText>
-        </ListItem>
-      </List>
+      <nav>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary="Inbox"/>
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <DraftsIcon />
+            </ListItemIcon>
+            <ListItemText primary="Draft"/>
+          </ListItem>
+        </List>
+        </nav>
+        <Divider />
+        <List>
+          <ListItem>
+            <ListItemButton
+            component="a"
+            href="#trash"
+            >
+              <ListItemText>Trash</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemButton>
+              <ListItemText>Draw</ListItemText>
+            </ListItemButton>
+          </ListItem>
+        </List>
     </Box>
-  )
+  );
 }
