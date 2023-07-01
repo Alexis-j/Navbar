@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
   return (
-    <Container>
+    <Container sx={{ mt: 5}}>
       <Navbar />
     </Container>
   );
