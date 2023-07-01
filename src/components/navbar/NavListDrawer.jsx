@@ -6,7 +6,7 @@ import DraftsIcon from '@mui/icons-material/Drafts';
 
 export default function NavListDrawer() {
   return (
-    <Box sx={{width: 200, bgcolor: "lightblue"}}>
+    <Box sx={{width: 200, bgcolor: "#ffffff"}}>
       <nav>
         <List>
           <ListItem>
