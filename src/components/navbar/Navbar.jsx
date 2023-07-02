@@ -1,18 +1,36 @@
-import { Button, Drawer } from "@mui/material";
+import { AppBar, Button, Drawer, IconButton, Toolbar, } from "@mui/material";
 import NavListDrawer from "./NavListDrawer";
 import { useState } from "react";
+import MenuIconRounded from '@mui/icons-material/MenuRounded';
 
 export default function Navbar() {
-
     const [open, setOpen] = useState (false)
-  return (
+
+    return (
     <>
-      <Button
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton>
+            <MenuIconRounded
+              sx={{
+              color:"#ffffff",
+              width: "2rem",
+              height: "2rem"}}
+
+              variant="contained"
+              onClick={() => setOpen(true)}
+
+            />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+
+      {/* <Button
         variant="contained"
         onClick={() => setOpen(true)}
       >
         Open Drawer
-      </Button>
+      </Button> */}
 
       <Drawer
         open={open}
@@ -21,9 +39,6 @@ export default function Navbar() {
       >
         <NavListDrawer />
       </Drawer>
-
-
-
     </>
   );
 }
