@@ -1,7 +1,7 @@
 import { List, ListItem, ListItemText, ListItemButton } from "@mui/material";
 import { Box } from "@mui/system";
 
-export default function NavListDrawer({ navLinks }) {
+export default function NavListDrawer({ navLinks, NavLink, setOpen }) {
   return (
     <Box sx={{ width: 200, bgcolor: "#ffffff" }}>
       <nav>
@@ -12,8 +12,9 @@ export default function NavListDrawer({ navLinks }) {
               key={item.title}
             >
               <ListItemButton
-                component="a"
-                href={item.path}
+                component={NavLink}
+                to={item.path}
+                onClick={() => setOpen(false)}
                 >
                 {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
                 <ListItemText>{item.title}</ListItemText>

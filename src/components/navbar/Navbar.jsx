@@ -46,7 +46,7 @@ export default function Navbar() {
                 <Button
                 color="inherit"
                 key={item.title}
-                component ={NavLink}
+                component={NavLink}
                 to={item.path}
               >
                 {item.title}
@@ -62,7 +62,11 @@ export default function Navbar() {
         onClose={() => setOpen(false)}
         // sx={{ display: {xs: "flex", sm: "none"} }}
       >
-        <NavListDrawer navLinks={navLinks}/>
+        <NavListDrawer
+          navLinks={navLinks}
+          NavLink={NavLink}
+          setOpen={setOpen}/>
+
       </Drawer>
     </>
   );
