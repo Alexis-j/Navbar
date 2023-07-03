@@ -1,48 +1,27 @@
-import { List, ListItem, ListItemIcon, ListItemText, Divider, ListItemButton } from "@mui/material";
+import { List, ListItem, ListItemText, ListItemButton } from "@mui/material";
 import { Box } from "@mui/system";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from '@mui/icons-material/Drafts';
 
-
-export default function NavListDrawer() {
+export default function NavListDrawer({ navLinks }) {
   return (
-    <Box sx={{width: 200, bgcolor: "#ffffff"}}>
+    <Box sx={{ width: 200, bgcolor: "#ffffff" }}>
       <nav>
         <List>
-          <ListItem>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <ListItemText primary="Inbox"/>
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Draft"/>
-          </ListItem>
-        </List>
-        </nav>
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton
-            component="a"
-            href="#trash"
+          {navLinks.map((item) => (
+            <ListItem
+              disablePadding
+              key={item.title}
             >
-              <ListItemText>Trash</ListItemText>
-            </ListItemButton>
-          </ListItem>
+              <ListItemButton
+                component="a"
+                href={item.path}
+                >
+                {/* <ListItemIcon>{item.icon}</ListItemIcon> */}
+                <ListItemText>{item.title}</ListItemText>
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton
-            component="a"
-            href="#Spam">
-              <ListItemText>Spam</ListItemText>
-            </ListItemButton>
-          </ListItem>
-        </List>
+      </nav>
     </Box>
   );
 }
