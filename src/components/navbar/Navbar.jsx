@@ -3,6 +3,7 @@ import NavListDrawer from "./NavListDrawer";
 import { useState } from "react";
 import MenuIconRounded from '@mui/icons-material/MenuRounded';
 import {InboxIcon } from "@mui/icons-material/Inbox";
+import { NavLink } from "react-router-dom";
 
 
       const navLinks = [
@@ -10,10 +11,10 @@ import {InboxIcon } from "@mui/icons-material/Inbox";
           title: "Home", path: "/home", icon: <InboxIcon />,
         },
         {
-          title: "Login", path: "#login", icon: <InboxIcon />,
+          title: "Login", path: "/login", icon: <InboxIcon />,
         },
         {
-          title: "Register", path: "#register", icon: <InboxIcon />,
+          title: "Register", path: "/register", icon: <InboxIcon />,
         },
       ]
 
@@ -29,7 +30,7 @@ export default function Navbar() {
               size="larger"
               variant="contained"
               onClick={() => setOpen(true)}
-              sx={{ display: {xs: "flex", sm: "none"} }}
+              // sx={{ display: {xs: "flex", sm: "none"} }}
 
           >
             <MenuIconRounded/>
@@ -45,8 +46,8 @@ export default function Navbar() {
                 <Button
                 color="inherit"
                 key={item.title}
-                component ="a"
-                href={item.path}
+                component ={NavLink}
+                to={item.path}
               >
                 {item.title}
                 </Button>
@@ -59,7 +60,7 @@ export default function Navbar() {
         open={open}
         anchor="left"
         onClose={() => setOpen(false)}
-        sx={{ display: {xs: "flex", sm: "none"} }}
+        // sx={{ display: {xs: "flex", sm: "none"} }}
       >
         <NavListDrawer navLinks={navLinks}/>
       </Drawer>
